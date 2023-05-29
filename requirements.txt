@@ -2,3 +2,5 @@ llama-cpp-python
 tqdm
 IPython
 unidecode
+requests
+openai

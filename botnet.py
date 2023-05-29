@@ -33,7 +33,7 @@ MODEL_URLS = {
 }
 
 CONVERTED_MODEL_URLS = {
-    
+    'gpt4all-lora-unfiltered-quantized':'https://www.dropbox.com/s/fjmvr8fghel6gl7/gpt4all-lora-unfiltered-quantized.ggml.bin?dl=1'
 }
 
 TOKENIZER_URL = 'https://huggingface.co/decapoda-research/llama-7b-hf/resolve/main/tokenizer.model'
@@ -65,8 +65,8 @@ def get_model_path(model_name=DEFAULT_MODEL):
 @cache
 def get_model(model_name:str=DEFAULT_MODEL, **kwargs):
     ## @HACK @FIX @TODO: force disable stderr output    
-    def donothing(*x,**y): pass
-    sys.stderr.write = donothing
+    # def donothing(*x,**y): pass
+    # sys.stderr.write = donothing
     ##
 
     from llama_cpp import Llama
@@ -167,6 +167,7 @@ def convert_filtered_model(): convert_model_orig(DEFAULT_MODEL_FILTERED)
 
 def download_model_converted(model_name:str=DEFAULT_MODEL, force:bool=False):
     # @TODO
+    
     pass
 
 def get_model_converted(model_name:str=DEFAULT_MODEL, force:bool=False, force_convert:bool=False):
