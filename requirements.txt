@@ -1,6 +1,3 @@
-llama-cpp-python
-tqdm
-IPython
-unidecode
-requests
-openai
+gpt4all
+py-cord
+python-dotenv
